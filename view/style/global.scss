@@ -1,0 +1,24 @@
+@use './colors.scss' as *;
+
+* {
+    margin: 0;
+    font-family: rye;
+}
+
+h1, h2, button {
+    user-select: none;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient($color-dark-brown, $color-very-dark-brown);
+}
+
+h1, button {
+    text-transform: uppercase;
+}
+
+.franc {
+    color: $color-light-brown;
+    text-shadow: 1px 1px 0 $color-cream;
+}

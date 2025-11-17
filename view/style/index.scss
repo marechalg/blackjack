@@ -1,0 +1,68 @@
+@use './colors.scss' as *;
+
+body.index main {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        font-size: 100px;
+        color: $color-cream;
+        text-shadow:
+            3px 3px 0 $color-light-brown,
+            6px 6px 0 $color-brown;
+    }
+
+    h2 {
+        font-size: 30px;
+        color: $color-dark-cream;
+        font-weight: normal;
+    }
+
+    ul {
+        margin: 2em;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+
+        button {
+            color: $color-cream;
+            padding: 0.5em;
+            font-size: 40px;
+            background-color: $color-dark-brown;
+            transition: all 0.2s ease;
+            width: 500px;
+            border: {
+                styme: solid;
+                width: 3px;
+                color: $color-dark-orange;
+                radius: 8px;
+            }
+
+            &:hover {
+                border-color: $color-cream;
+                background-color: $color-brown;
+                cursor: pointer;
+            }
+        }
+    }
+
+    article {
+        display: flex;
+        justify-content: center;
+        gap: 0.25em;
+
+        p {
+            font-size: 30px;
+
+            &:not(.franc) {
+                color: $color-cream;
+            }
+        }
+    }
+}
