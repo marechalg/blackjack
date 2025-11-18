@@ -37,7 +37,7 @@ body.index main {
     }
 
     h1 {
-        font-size: 100px;
+        font-size: 70px;
         color: $color-cream;
         text-shadow:
             3px 3px 0 $color-light-brown,
@@ -45,7 +45,7 @@ body.index main {
     }
 
     h2 {
-        font-size: 30px;
+        font-size: 25px;
         color: $color-dark-cream;
         font-weight: normal;
     }
@@ -61,7 +61,7 @@ body.index main {
         button {
             color: $color-cream;
             padding: 0.5em;
-            font-size: 40px;
+            font-size: 30px;
             background-color: $color-dark-brown;
             transition: all 0.2s ease;
             width: 500px;

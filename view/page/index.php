@@ -16,6 +16,7 @@
         <ul>
             <li><button>Play</button></li>
             <li><button>How to play</button></li>
+            <li><button>Carreer</button></li>
             <li><button>Statistics</button></li>
             <li><button>Settings</button></li>
         </ul>

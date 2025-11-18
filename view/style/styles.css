@@ -59,12 +59,12 @@ body.index main * {
   z-index: 1;
 }
 body.index main h1 {
-  font-size: 100px;
+  font-size: 70px;
   color: #D4A574;
   text-shadow: 3px 3px 0 #5a3520, 6px 6px 0 #3e2415;
 }
 body.index main h2 {
-  font-size: 30px;
+  font-size: 25px;
   color: #a67c52;
   font-weight: normal;
 }
@@ -79,7 +79,7 @@ body.index main ul {
 body.index main ul button {
   color: #D4A574;
   padding: 0.5em;
-  font-size: 40px;
+  font-size: 30px;
   background-color: #1A0F08;
   transition: all 0.2s ease;
   width: 500px;
