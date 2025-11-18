@@ -1,3 +1,5 @@
+<?php require_once '../../controller/auth.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +17,7 @@
     </header>
 
     <main>
-        
+
     </main>
 </body>
 
