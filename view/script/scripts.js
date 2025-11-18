@@ -10,4 +10,9 @@ function toCamel(input) {
     });
     return rebuild;
 }
+Array.from(document.querySelectorAll('body.index button')).forEach((button) => {
+    button.addEventListener('click', () => {
+        window.location.href = `/view/page/${toCamel(button.textContent)}.php`;
+    });
+});
 //# sourceMappingURL=scripts.js.map
