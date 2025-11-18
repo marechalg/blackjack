@@ -15,4 +15,10 @@ Array.from(document.querySelectorAll('body.index button')).forEach((button) => {
         window.location.href = `/view/page/${toCamel(button.textContent)}.php`;
     });
 });
+if (window.screenTop && window.screenY) {
+    alert('caca');
+    if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+    }
+}
 //# sourceMappingURL=scripts.js.map
