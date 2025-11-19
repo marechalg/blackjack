@@ -8,11 +8,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $stmt = $pdo->prepare("SELECT count(*) FROM blackjack._user WHERE username = :username AND password = :password");
-    $stmt->execute(['username' => $username, 'password' => $password]);
-    $valid = $stmt->fetchColumn();
+    // Retrieve the hashed password from the database
+    $stmt = $pdo->prepare("SELECT password FROM blackjack._user WHERE username = :username");
+    $stmt->execute(['username' => $username]);
+    $hashedPassword = $stmt->fetchColumn();
 
-    if ($valid) {
+    // Verify the password using password_verify()
+    if ($hashedPassword && password_verify($password, $hashedPassword)) {
         session_regenerate_id(true);
         $_SESSION['user'] = new User($username);
         header('Location: ../view/page/index.php');
