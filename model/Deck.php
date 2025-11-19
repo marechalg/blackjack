@@ -21,7 +21,7 @@ class Deck {
 
     public function init(): void {
         for ($i = 0; $i < $this->nDecks; $i++) {
-
+            
         }
     }
 }
