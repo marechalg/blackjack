@@ -12,7 +12,7 @@
 </head>
 
 <body class="index">
-    <main>
+    <main class="centered">
         <h1>BlackJack</h1>
         <h2>Wild West Saloon</h2>
         <ul>

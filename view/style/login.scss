@@ -1,0 +1,76 @@
+@use './colors.scss' as *;
+@use './fonts.scss';
+
+body.login {
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+
+    h2 {
+        font-size: 25px;
+        color: $color-dark-cream;
+        font-weight: normal;
+    }
+
+    label {
+        font-size: 25px;
+        color: $color-dark-cream;
+        font-weight: normal;
+    }
+    
+    form {
+        margin-top: 2em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+        
+        input {
+            &::placeholder {
+                font-size: 25px;
+                color: $color-dark-cream;
+                font-weight: normal;
+            }
+            
+            font-size: 25px;
+            padding: 0.25em;
+            background-color: $color-cream;
+            color: $color-dark-brown;
+            border: {
+                style: solid;
+                width: 1px;
+                color: $color-dark-orange;
+                radius: 8px;
+            }
+            width: 100%;
+            
+            
+            color: $color-cream;
+            padding: 0.5em;
+            font-size: 30px;
+            background-color: $color-dark-brown;
+            transition: all 0.2s ease;
+            border: {
+                style: solid;
+                width: 3px;
+                color: $color-dark-orange;
+                radius: 8px;
+            }
+            
+            &:hover, &:focus {
+                border-color: $color-cream;
+                background-color: $color-brown;
+                cursor: pointer;
+                
+            }
+
+            &:last-of-type {
+                width: 50%;
+            }
+        }
+        
+    }
+}

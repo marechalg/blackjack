@@ -22,3 +22,48 @@ h1, button {
     color: $color-light-brown;
     text-shadow: 1px 1px 0 $color-cream;
 }
+
+main.centered {
+    * {
+        z-index: 1;
+    }
+
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: {
+        top: 2em; bottom: 2em;
+        left: 10em; right: 10em;
+    }
+
+    background: {
+        image: url(/view/images/wood.jpg);
+        repeat: no-repeat;
+        size: cover;
+    }
+
+    border: {
+        style: solid;
+        width: 3px;
+        color: $color-brown;
+        radius: 8px;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-color: rgba(26, 15, 8, 0.95);
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    h1 {
+        font-size: 50px;
+        color: $color-cream;
+        text-shadow:
+            3px 3px 0 $color-light-brown,
+            6px 6px 0 $color-brown;
+    }
+}

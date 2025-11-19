@@ -7,42 +7,6 @@ body.index main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: {
-        top: 2em; bottom: 2em;
-        left: 10em; right: 10em;
-    }
-
-    background: {
-        image: url(/view/images/wood.jpg);
-        repeat: no-repeat;
-        size: cover;
-    }
-    border: {
-        style: solid;
-        width: 3px;
-        color: $color-brown;
-        radius: 8px;
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background-color: rgba(26, 15, 8, 0.95);
-        pointer-events: none;
-    }
-
-    * {
-        z-index: 1;
-    }
-
-    h1 {
-        font-size: 70px;
-        color: $color-cream;
-        text-shadow:
-            3px 3px 0 $color-light-brown,
-            6px 6px 0 $color-brown;
-    }
 
     h2 {
         font-size: 25px;

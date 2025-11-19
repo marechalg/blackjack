@@ -25,14 +25,14 @@ h1, button {
   text-shadow: 1px 1px 0 #D4A574;
 }
 
-body.index main {
+main.centered * {
+  z-index: 1;
+}
+main.centered {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding-top: 2em;
   padding-bottom: 2em;
   padding-left: 10em;
@@ -45,7 +45,7 @@ body.index main {
   border-color: #3e2415;
   border-radius: 8px;
 }
-body.index main::after {
+main.centered::after {
   content: "";
   position: absolute;
   top: 0;
@@ -54,14 +54,22 @@ body.index main::after {
   bottom: 0;
   background-color: rgba(26, 15, 8, 0.95);
   pointer-events: none;
+  z-index: -1;
 }
-body.index main * {
-  z-index: 1;
-}
-body.index main h1 {
-  font-size: 70px;
+main.centered h1 {
+  font-size: 50px;
   color: #D4A574;
   text-shadow: 3px 3px 0 #5a3520, 6px 6px 0 #3e2415;
+}
+
+body.index main {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 body.index main h2 {
   font-size: 25px;
@@ -103,6 +111,63 @@ body.index main article p {
 }
 body.index main article p:not(.franc) {
   color: #D4A574;
+}
+
+body.login main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+body.login h2 {
+  font-size: 25px;
+  color: #a67c52;
+  font-weight: normal;
+}
+body.login label {
+  font-size: 25px;
+  color: #a67c52;
+  font-weight: normal;
+}
+body.login form {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
+body.login form input::placeholder {
+  font-size: 25px;
+  color: #a67c52;
+  font-weight: normal;
+}
+body.login form input {
+  font-size: 25px;
+  padding: 0.25em;
+  background-color: #D4A574;
+  color: #1A0F08;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #8b4513;
+  border-radius: 8px;
+  width: 100%;
+  color: #D4A574;
+  padding: 0.5em;
+  font-size: 30px;
+  background-color: #1A0F08;
+  transition: all 0.2s ease;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #8b4513;
+  border-radius: 8px;
+}
+body.login form input:hover, body.login form input:focus {
+  border-color: #D4A574;
+  background-color: #3e2415;
+  cursor: pointer;
+}
+body.login form input:last-of-type {
+  width: 50%;
 }
 
 /*# sourceMappingURL=styles.css.map */
