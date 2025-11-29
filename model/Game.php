@@ -7,28 +7,35 @@ enum GameStatus: string {
 
 class Game {
     private static int $autoId = 0;
-    private readonly int $id;
+    public readonly int $id;
     
     public readonly DateTime $debut;
     public GameStatus $status;
 
-    public Dealer $dealer;
     public Deck $deck;
 
     public array $players = [];
     public static final int $MAX_PLAYERS = 7;
 
     public array $rounds = [];
-    public int $round = 0;
 
-    public function __construct() {
+    public function __construct(User $firstUser) {
         $this->id = ++self::$autoId;
         $this->debut = new DateTime('now');
         $this->status = GameStatus::RUNNING;
-        $this->dealer = new Dealer();
         $this->deck = new Deck();
 
+        $this->players[] = $firstUser;
+
         $this->newRound();
+    }
+
+    public function newRound() {
+        $this->rounds[] = new Round($this);
+    }
+
+    public function __toString(): string {
+        return include './controller/__toString.php';
     }
 }
 

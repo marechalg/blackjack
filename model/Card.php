@@ -17,7 +17,7 @@ enum Type: string {
 }
 
 enum Symbol: string {
-    case ONE = '1';
+    case ACE = 'A';
     case TWO = '2';
     case THREE = '3';
     case FOUR = '4';
@@ -30,7 +30,6 @@ enum Symbol: string {
     case JACK = 'J';
     case QUEEN = 'Q';
     case KING = 'K';
-    case ACE = 'A';
 
     public function getValue(): int {
         return match($this) {
@@ -59,6 +58,10 @@ class Card {
         $this->id = ++self::$autoId;
         $this->type = $type;
         $this->symbol = $symbol;
+    }
+
+    public function __toString(): string {
+        return include './controller/__toString.php';
     }
 }
 
