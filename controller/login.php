@@ -8,17 +8,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $stmt = $pdo->prepare("SELECT count(*) FROM blackjack._user WHERE username = :username AND password = :password");
-    $stmt->execute(['username' => $username, 'password' => $password]);
-    $valid = $stmt->fetchColumn();
+    $loginSTMT = $pdo->prepare(file_get_contents('../db/queries/login.sql'));
+    $loginSTMT->execute(['username' => $username, 'password' => $password]);
+    $id = $loginSTMT->fetchColumn();
 
-    if ($valid) {
+    if ($id) {
         session_regenerate_id(true);
-        $_SESSION['user'] = new User($username);
+        $_SESSION['id'] = $id;
         header('Location: ../view/page/index.php');
         exit();
     } else {
-        header('Location: ../view/page/login.php?error=invalid_credentials');
+        header('Location: ../view/page/login.php?error=1');
         exit();
     }
 }
