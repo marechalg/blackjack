@@ -19,13 +19,11 @@ class Game {
 
     public array $rounds = [];
 
-    public function __construct(User $firstUser) {
+    public function __construct() {
         $this->id = ++self::$autoId;
         $this->debut = new DateTime('now');
         $this->status = GameStatus::RUNNING;
         $this->deck = new Deck();
-
-        $this->players[] = $firstUser;
 
         $this->newRound();
     }
