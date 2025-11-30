@@ -5,7 +5,7 @@ require_once 'pdo.php';
 session_start();
 
 if (isset($_SESSION['id'])) {
-    $authSTMT = $pdo->prepare(file_get_contents('../db/queries/login.sql'));
+    $authSTMT = $pdo->prepare(file_get_contents('../../db/queries/auth.sql'));
     $authSTMT->execute(['id' => $_SESSION['id']]);
     $exists = $authSTMT->fetchColumn();
     if (!$exists) {

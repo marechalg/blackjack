@@ -1,6 +1,6 @@
 <?php
 
-require_once './database.php';
+require_once 'database.php';
 
 try {
     $pdo = new PDO("pgsql:host=$host;port=$port;dbname=$dbname", $user, $pass);

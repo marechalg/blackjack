@@ -8,13 +8,13 @@ body.login {
         align-items: center;
         gap: 1em;
     }
-
+    
     h2 {
         font-size: 25px;
         color: $color-dark-cream;
         font-weight: normal;
     }
-
+    
     label {
         font-size: 25px;
         color: $color-dark-cream;
@@ -27,6 +27,30 @@ body.login {
         flex-direction: column;
         align-items: center;
         gap: 2em;
+        
+        p {
+            color: $color-dark-orange;
+
+            &:hover {
+                cursor: help;
+            }
+        }
+        
+        a {
+            color: $color-dark-cream;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-bottom: {
+                style: solid;
+                width: 1px;
+                color: transparent;
+            }
+            
+            &:hover {
+                color: $color-cream;
+                border-bottom-color: $color-cream;
+            }
+        }
         
         input {
             &::placeholder {
@@ -66,7 +90,7 @@ body.login {
                 cursor: pointer;
                 
             }
-
+            
             &:last-of-type {
                 width: 50%;
             }

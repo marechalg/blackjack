@@ -136,6 +136,24 @@ body.login form {
   align-items: center;
   gap: 2em;
 }
+body.login form p {
+  color: #8b4513;
+}
+body.login form p:hover {
+  cursor: help;
+}
+body.login form a {
+  color: #a67c52;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: transparent;
+}
+body.login form a:hover {
+  color: #D4A574;
+  border-bottom-color: #D4A574;
+}
 body.login form input::placeholder {
   font-size: 25px;
   color: #a67c52;

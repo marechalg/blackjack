@@ -1,7 +1,7 @@
 <?php
 
-require_once './pdo.php';
-require_once '../model/User.php';
+require_once 'pdo.php';
+
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
