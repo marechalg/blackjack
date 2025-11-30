@@ -5,11 +5,8 @@ require_once 'pdo.php';
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
     $loginSTMT = $pdo->prepare(file_get_contents('../db/queries/login.sql'));
-    $loginSTMT->execute(['username' => $username, 'password' => $password]);
+    $loginSTMT->execute(['username' => $_POST['username'], 'password' => $_POST['password']]);
     $id = $loginSTMT->fetchColumn();
 
     if ($id) {
