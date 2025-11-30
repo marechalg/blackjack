@@ -1,11 +1,4 @@
-<?php
-
-session_start();
-session_unset();
-session_destroy();
-session_start();
-
-?>
+<?php require_once '../../controller/sessionReset.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
