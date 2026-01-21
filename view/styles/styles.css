@@ -2,6 +2,10 @@
   font-family: rye;
   src: url(./fonts/Rye-Regular.ttf);
 }
+@font-face {
+  font-family: quicksand;
+  src: url(./fonts/Quicksand-VariableFont_wght.ttf);
+}
 * {
   margin: 0;
   font-family: rye;
@@ -52,11 +56,12 @@ main.centered::after {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(26, 15, 8, 0.95);
+  background-color: rgba(26, 15, 8, 0.9);
   pointer-events: none;
   z-index: -1;
 }
 main.centered h1 {
+  text-align: center;
   font-size: 40px;
   color: #D4A574;
   text-shadow: 3px 3px 0 #5a3520, 6px 6px 0 #3e2415;
@@ -125,9 +130,12 @@ body.login h2 {
   font-weight: normal;
 }
 body.login label {
-  font-size: 25px;
-  color: #a67c52;
-  font-weight: normal;
+  font-size: 15px;
+  color: #8b2b13;
+  margin-bottom: -1em;
+  justify-self: left;
+  font-family: quicksand;
+  font-weight: bold;
 }
 body.login form {
   margin-top: 2em;
@@ -146,6 +154,8 @@ body.login form a {
   color: #a67c52;
   text-decoration: none;
   transition: all 0.2s ease;
+  font-weight: bold;
+  font-family: quicksand;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: transparent;
@@ -153,6 +163,32 @@ body.login form a {
 body.login form a:hover {
   color: #D4A574;
   border-bottom-color: #D4A574;
+}
+body.login form div {
+  box-sizing: border-box;
+  position: relative;
+}
+body.login form div:hover img {
+  display: block;
+}
+body.login form div:hover input {
+  border-color: #D4A574;
+  background-color: #3e2415;
+}
+body.login form div img {
+  position: absolute;
+  right: 1em;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  height: 30px;
+  transition: all 0.2s ease;
+}
+body.login form div img:hover {
+  cursor: pointer;
+}
+body.login form input {
+  box-sizing: border-box;
 }
 body.login form input::placeholder {
   font-size: 25px;
@@ -179,14 +215,21 @@ body.login form input {
   border-color: #8b4513;
   border-radius: 8px;
 }
-body.login form input:hover, body.login form input:focus {
+body.login form input:hover:not(:disabled), body.login form input:focus {
   border-color: #D4A574;
   background-color: #3e2415;
   cursor: pointer;
   outline: none;
 }
-body.login form input:last-of-type {
+body.login form input[type=submit] {
   width: 50%;
+}
+body.login form input:disabled {
+  color: #3e2415;
+  border-color: #3e2415;
+}
+body.login form input:disabled:hover {
+  cursor: not-allowed;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -16,9 +16,12 @@ body.login {
     }
     
     label {
-        font-size: 25px;
-        color: $color-dark-cream;
-        font-weight: normal;
+        font-size: 15px;
+        color: $color-red;
+        margin-bottom: -1em;
+        justify-self: left;
+        font-family: quicksand;
+        font-weight: bold;
     }
     
     form {
@@ -30,7 +33,7 @@ body.login {
         
         p {
             color: $color-dark-orange;
-
+            
             &:hover {
                 cursor: help;
             }
@@ -40,6 +43,8 @@ body.login {
             color: $color-dark-cream;
             text-decoration: none;
             transition: all 0.2s ease;
+            font-weight: bold;
+            font-family: quicksand;
             border-bottom: {
                 style: solid;
                 width: 1px;
@@ -52,7 +57,38 @@ body.login {
             }
         }
         
+        div {
+            box-sizing: border-box;
+            position: relative;
+
+            &:hover {
+                img {
+                    display: block;
+                }
+
+                input {
+                    border-color: $color-cream;
+                    background-color: $color-brown;
+                }
+            }
+            
+            img {
+                position: absolute;
+                right: 1em;
+                top: 50%;
+                transform: translateY(-50%);
+                display: none;
+                height: 30px;
+                transition: all 0.2s ease;
+                
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+        
         input {
+            box-sizing: border-box;
             &::placeholder {
                 font-size: 25px;
                 color: $color-dark-cream;
@@ -84,15 +120,24 @@ body.login {
                 radius: 8px;
             }
             
-            &:hover, &:focus {
+            &:hover:not(:disabled), &:focus {
                 border-color: $color-cream;
                 background-color: $color-brown;
                 cursor: pointer;
                 outline: none;
             }
             
-            &:last-of-type {
+            &[type="submit"] {
                 width: 50%;
+            }
+            
+            &:disabled {
+                color: $color-brown;
+                border-color: $color-brown;
+                
+                &:hover {
+                    cursor: not-allowed;
+                }
             }
         }
         

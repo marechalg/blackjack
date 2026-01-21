@@ -2,12 +2,12 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "amd",
-    "outFile": "./view/script/scripts.js",
-    "rootDir": "./view/script",
+    "outFile": "view/scripts/scripts.js",
+    "rootDir": "view/scripts",
     "sourceMap": true,
     "declaration": false,
     "strict": true
   },
-  "include": ["./view/script/*.ts"],
+  "include": ["view/scripts/*.ts"],
   "exclude": ["node_modules"]
 }

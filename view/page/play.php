@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wild West Saloon</title>
 
-    <link rel="stylesheet" href="/view/style/styles.css">
+    <link rel="stylesheet" href="/view/styles/styles.css">
 </head>
 
 <body>

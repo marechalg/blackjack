@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wild West Saloon</title>
 
-    <link rel="stylesheet" href="/view/style/styles.css">
+    <link rel="stylesheet" href="/view/styles/styles.css">
 </head>
 
 <body class="login">
@@ -17,9 +17,9 @@
         <h2>Enter Your Credentials</h2>
 
         <form action="/controller/login.php" method="POST">
-            <a href="./register.php">Don't have an account yet ? Register to the Saloon</a>
-            <input type="text" name="username" id="username" placeholder="Username">
-            <input type="password" name="password" id="password" placeholder="Password">
+            <a href="./register.php">Ain't got a tab yet ? Enlist at the bar</a>
+            <input type="text" name="username" id="enter-usr" placeholder="Username">
+            <input type="password" name="password" id="enter-pass" placeholder="Password">
             <?php
                 if (isset($_GET['error'])) {
                     switch ($_GET['error']) {
@@ -35,9 +35,11 @@
                     }
                 }
             ?>
-            <input type="submit" value="Enter">
+            <input type="submit" value="Enter" id="button-enter" disabled>
         </form>
     </main>
+
+    <script src="/view/scripts/scripts.js"></script>
 </body>
 
 </html>

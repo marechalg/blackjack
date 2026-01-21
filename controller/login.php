@@ -6,12 +6,12 @@ session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $loginSTMT = $pdo->prepare(file_get_contents('../db/queries/login.sql'));
-    $loginSTMT->execute(['username' => $_POST['username'], 'password' => $_POST['password']]);
-    $id = $loginSTMT->fetchColumn();
+    $loginSTMT->execute(['username' => $_POST['username']]);
+    $user = $loginSTMT->fetch(PDO::FETCH_ASSOC);
 
-    if ($id) {
+    if ($user && password_verify($_POST['password'], $user['password'])) {
         session_regenerate_id(true);
-        $_SESSION['id'] = $id;
+        $_SESSION['id'] = $user['id'];
         header('Location: ../view/page/index.php');
         exit();
     } else {

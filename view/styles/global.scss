@@ -54,12 +54,13 @@ main.centered {
         content: '';
         position: absolute;
         top: 0; left: 0; right: 0; bottom: 0;
-        background-color: rgba(26, 15, 8, 0.95);
+        background-color: rgba(26, 15, 8, 0.90);
         pointer-events: none;
         z-index: -1;
     }
 
     h1 {
+        text-align: center;
         font-size: 40px;
         color: $color-cream;
         text-shadow:
